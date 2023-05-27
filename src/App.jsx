@@ -1,11 +1,12 @@
 import './App.css'
-import Titulos from './components/Titulos'
+import Saludo from './components/Saludo'
+
 
 function App() {
   
   return (
     <>
-      <Titulos/> 
+      <Saludo name= 'my friend!' />
     </>
     
   )
