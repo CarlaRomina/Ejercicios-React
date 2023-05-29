@@ -1,15 +1,31 @@
-import './App.css'
-import Saludo from './components/Saludo'
+import React, { useState } from "react";
 
+function Saludo(props) {
+  const [msj, setMsj] = useState("(from changed state)");
+  const [mostrarMensaje, setMostrarMensaje] = useState(false);
 
-function App() {
-  
+  const mostrar = () => {
+    setMostrarMensaje(true);
+  };
+
   return (
-    <>
-      <Saludo name= 'my friend!' />
-    </>
-    
-  )
+
+    <div>
+      <h1>
+        Hello {props.name} {mostrarMensaje && msj} !
+      </h1>
+      <button onClick={mostrar} >Mostrar mensaje</button>
+    </div>
+
+  );
 }
 
-export default App
+function App() {
+  return (
+    <div>
+      <Saludo name="my friend" />
+    </div>
+  );
+}
+
+export default App;
